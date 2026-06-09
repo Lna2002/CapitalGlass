@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapitalGlass - Acceso de Usuarios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="clima-core-login">
+
+    <div class="login-wrapper-cg">
+        
+        <div id="login-box" class="auth-card-cg animate-fade-cg">
+            <div class="auth-header-cg">
+                <div class="logo-premium-cg">
+                    <i class="fa-solid fa-gem text-accent"></i> Capital<span class="text-white">Glass</span>
+                </div>
+                <h2>Autenticación de Canales</h2>
+                <p>Introduce tus credenciales para conectar al libro mayor.</p>
+            </div>
+            
+            <form id="login-form" class="gate-form-cg">
+                <div class="field-cg">
+                    <label for="login-email">Correo Electrónico</label>
+                    <div class="input-wrapper-cg">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="usuario@correo.com" required>
+                    </div>
+                </div>
+
+                <div class="field-cg">
+                    <label for="login-password">Contraseña Corporativa</label>
+                    <div class="input-wrapper-cg">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth-cg">
+                    Autenticar Sistema <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer-cg">
+                <span>¿Operador nuevo?</span>
+                <a href="#" id="go-to-register">Solicitar Registro</a>
+            </div>
+        </div>
+
+        <div id="register-box" class="auth-card-cg hidden animate-fade-cg">
+            <div class="auth-header-cg">
+                <div class="logo-premium-cg">
+                    <i class="fa-solid fa-gem text-accent"></i> Capital<span class="text-white">Glass</span>
+                </div>
+                <h2>Crear Credenciales</h2>
+                <p>Introduce tus datos.</p>
+            </div>
+            
+            <form id="register-form" class="gate-form-cg">
+                <div class="field-cg">
+                    <label for="reg-name">Nombre Completo</label>
+                    <div class="input-wrapper-cg">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <input type="text" id="reg-name" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                </div>
+
+                <div class="field-cg">
+                    <label for="reg-email">Correo Electrónico</label>
+                    <div class="input-wrapper-cg">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="reg-email" placeholder="correo@servidor.com" required>
+                    </div>
+                </div>
+
+                <div class="field-cg">
+                    <label for="reg-password">Contraseña de Seguridad</label>
+                    <div class="input-wrapper-cg">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="reg-password" placeholder="Mínimo 6 caracteres" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-auth-cg btn-register-cg">
+                    Registrate YA! <i class="fa-solid fa-user-plus"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer-cg">
+                <span>¿Ya posees una llave de acceso?</span>
+                <a href="#" id="go-to-login">Regresar al Login</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

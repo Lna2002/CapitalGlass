@@ -1,0 +1,145 @@
+:root {
+    --bg-main: #020617;
+    --surface-glass: rgba(15, 23, 42, 0.25);
+    --border-glass: rgba(255, 255, 255, 0.05);
+    --blur-deep: blur(20px) saturate(140%);
+    --primary: #6366f1;
+    --accent: #a5b4fc;
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+}
+
+body.clima-core-login {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    /* Mismo fondo de nubes oscuras que el Dashboard */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+.login-wrapper-cg { 
+    width: 100%; 
+    max-width: 440px; 
+    padding: 1.5rem; 
+}
+
+/* TARJETA CON EFECTO DE CRISTAL COMPARTIDO */
+.auth-card-cg {
+    background: var(--surface-glass) !important;
+    backdrop-filter: var(--blur-deep) !important; 
+    -webkit-backdrop-filter: var(--blur-deep) !important;
+    border: 1px solid var(--border-glass) !important;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.auth-header-cg { 
+    text-align: center; 
+    margin-bottom: 2rem; 
+}
+
+.logo-premium-cg { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    letter-spacing: -0.5px; 
+    margin-bottom: 1rem; 
+    color: var(--accent); 
+}
+
+.logo-premium-cg span { 
+    font-weight: 400; 
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.auth-header-cg h2 { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    color: #fff; 
+    margin-bottom: 0.4rem; 
+}
+
+.auth-header-cg p { 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+    line-height: 1.4; 
+}
+
+/* FORMULARIOS Y ENTRADAS */
+.gate-form-cg { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.3rem; 
+}
+
+.field-cg { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.4rem; 
+}
+
+.field-cg label { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    font-weight: 600; 
+}
+
+.input-wrapper-cg { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+.input-wrapper-cg i { 
+    position: absolute; 
+    left: 1rem; 
+    color: var(--text-muted); 
+    font-size: 0.95rem; 
+}
+
+.input-wrapper-cg input {
+    width: 100%; 
+    padding: 0.9rem 1rem 0.9rem 2.6rem;
+    background: rgba(15, 23, 42, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px; 
+    color: #fff; 
+    font-size: 0.95rem; 
+    transition: all 0.2s ease;
+}
+
+.input-wrapper-cg input:focus { 
+    outline: none; 
+    border-color: var(--primary); 
+    background: rgba(15, 23, 42, 0.8); 
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* BOTONES PREMIUM */
+.btn-auth-cg {
+    width: 100%; 
+    padding: 1rem; 
+    background: var(--primary); 
+    color: #fff;
+    border: none; 
+    border-

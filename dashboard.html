@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapitalGlass - Arquitectura Financiera Independiente</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="clima-nublado">
+
+    <header class="navbar-cg">
+        <div class="logo-cg">
+            <i class="fa-solid fa-gem text-accent"></i> Capital<span class="text-white">Glass</span>
+        </div>
+        <div class="nav-right-cg">
+            <div class="user-profile-cg" id="user-display"></div>
+            <button id="btn-logout" class="btn-logout-cg" title="Cerrar Sesión Activa">
+                <i class="fa-solid fa-power-off"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container-cg">
+        
+        <aside class="metrics-stack">
+            <div class="section-header-cg">
+                <h2>Métricas Asíncronas</h2>
+            </div>
+            
+            <div class="metric-card-cg card-glass">
+                <div class="card-icon-cg income-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="card-info-cg">
+                    <h3>Capital Inicial</h3>
+                    <p id="metric-budget">$0.00</p>
+                </div>
+                <button type="button" id="btn-set-budget" class="btn-small-cg" title="Actualizar Capital Base"><i class="fa-solid fa-pen"></i></button>
+            </div>
+
+            <div class="metric-card-cg card-glass">
+                <div class="card-icon-cg expense-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                <div class="card-info-cg">
+                    <h3>Egreso Acumulado</h3>
+                    <p id="metric-total-expenses">$0.00</p>
+                </div>
+            </div>
+
+            <div class="metric-card-cg card-glass">
+                <div class="card-icon-cg balance-icon"><i class="fa-solid fa-gem"></i></div>
+                <div class="card-info-cg">
+                    <h3>Saldo en Caja</h3>
+                    <p id="metric-balance">$0.00</p>
+                </div>
+            </div>
+
+            <div class="metric-card-cg card-glass api-weather-cg">
+                <div class="card-icon-cg weather-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+                <div class="card-info-cg">
+                    <h3>Atmósfera Regional</h3>
+                    <p id="weather-status" class="loading-text">Localizando coordenadas...</p>
+                </div>
+            </div>
+        </aside>
+
+        <div class="workspace-panels">
+            
+            <section class="card-glass form-panel-cg">
+                <div class="panel-header-cg">
+                    <h2 id="form-title"><i class="fa-solid fa-square-plus text-primary"></i> Registrar Operación</h2>
+                </div>
+                
+                <form id="transaction-form" class="form-cg">
+                    <input type="hidden" id="tx-id">
+
+                    <div class="input-field-cg">
+                        <label for="tx-desc">Referencia / Concepto</label>
+                        <input type="text" id="tx-desc" placeholder="Ej. Adquisición de Licencias de Software" required>
+                    </div>
+
+                    <div class="input-field-cg">
+                        <label for="tx-amount">Monto ($)</label>
+                        <input type="number" id="tx-amount" step="0.01" min="0.01" placeholder="0.00" required>
+                    </div>
+
+                    <div class="form-row-cg">
+                        <div class="input-field-cg">
+                            <label for="tx-category">Modalidad / Categoría</label>
+                            <select id="tx-category" required>
+                                <option value="Tecnología">Tecnología</option>
+                                <option value="Educación">Educación</option>
+                                <option value="Alimentación">Alimentación</option>
+                                <option value="Servicios">Servicios</option>
+                                <option value="Otros">Otros Egresos</option>
+                            </select>
+                        </div>
+                        <div class="input-field-cg">
+                            <label for="tx-date">Fecha de Ejecución</label>
+                            <input type="date" id="tx-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons-cg">
+                        <button type="submit" id="btn-submit-tx" class="btn-main-cg btn-confirmar">
+                            <i class="fa-solid fa-check-double"></i> Confirmar Operación
+                        </button>
+                        <button type="button" id="btn-cancel-edit" class="btn-main-cg btn-limpiar hidden">
+                            <i class="fa-solid fa-broom"></i> Limpiar Formulario
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card-glass list-panel-cg">
+                <div class="panel-header-cg">
+                    <h2><i class="fa-solid fa-gem text-accent"></i> Auditoría de Flujo</h2>
+                </div>
+                
+                <div class="table-container-cg">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Categoría</th>
+                                <th>Fecha</th>
+                                <th>Monto</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactions-table-body"></tbody>
+                    </table>
+                    <div id="empty-state" class="empty-state-cg">
+                        <i class="fa-solid fa-fingerprint"></i>
+                        <p>No se registran operaciones activas.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
